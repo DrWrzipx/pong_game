@@ -12,7 +12,6 @@ impl Plugin for HelloPlugin {
     }
 }
 
-
 fn main() {
     App::build()
         .add_plugins(DefaultPlugins)
@@ -25,9 +24,18 @@ fn hello_world() {
 }
 
 fn add_people(mut commands: Commands) {
-    commands.spawn().insert(Person).insert(Name("France Preseren".to_string()));
-    commands.spawn().insert(Person).insert(Name("Valentin Vodnik".to_string()));
-    commands.spawn().insert(Person).insert(Name("Joze Plecnik".to_string()));
+    commands
+        .spawn()
+        .insert(Person)
+        .insert(Name("France Preseren".to_string()));
+    commands
+        .spawn()
+        .insert(Person)
+        .insert(Name("Valentin Vodnik".to_string()));
+    commands
+        .spawn()
+        .insert(Person)
+        .insert(Name("Joze Plecnik".to_string()));
 }
 
 fn greet_people(query: Query<&Name, With<Person>>) {
